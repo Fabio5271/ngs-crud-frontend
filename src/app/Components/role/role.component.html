@@ -1,28 +1,38 @@
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#EditAddRole" (click)="openModel()" style="margin: 50px;">Create New Role</button>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name Role</th>
-      <th scope="col" colspan="2">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let role of roleList" >
-      <th scope="row">{{role.id}}</th>
-      <td>{{role.roleName}}</td>
-      <td>
-        <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#EditAddRole" (click)="openModel(role)">Edit</button>
-      </td>
-      <td>
-        <button type="button" class="btn btn-danger" (click)="deleteRole(role.id)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="row justify-content-between m-0 p-3">
+  <h5 class="col my-auto p-0">Roles Management</h5>
+  <button type="button" class="btn btn-success col-auto" data-toggle="modal" data-target="#EditAddRole"
+    (click)="openModel()">Create New Role</button>
+</div>
+
+<div class="p-0 mx-3 my-1 bg-light border border-secondary rounded" style="overflow: hidden;">
+  <table class="table mb-0">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id #</th>
+        <th scope="col">Role</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of roleList">
+        <th scope="row">{{role.id}}</th>
+        <td>{{role.roleName}}</td>
+        <td>
+          <div class="row m-0">
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#EditAddRole"
+              (click)="openModel(role)">Edit</button>
+            <div class="p-2"></div>
+            <button type="button" class="btn btn-danger" (click)="deleteRole(role.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <!-- Modal -->
-<div class="modal fade" id="EditAddRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="EditAddRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
