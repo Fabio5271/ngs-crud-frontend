@@ -35,29 +35,25 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="EditAddUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal modal-lg fade" id="EditAddUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Role</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLongTitle">User</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
           <!-- <span aria-hidden="true">&times;</span> -->
         </button>
       </div>
       <div class="modal-body">
         <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="">First and last name</span>
-          </div>
-          <input type="text" class="form-control" [(ngModel)]="userToModify.userName">
-          <input type="text" class="form-control" [(ngModel)]="userToModify.lastName">
+          <span class="input-group-text">First and last name</span>
+          <input type="text" aria-label="First name" class="form-control" [(ngModel)]="userToModify.userName">
+          <input type="text" aria-label="Last name" class="form-control" [(ngModel)]="userToModify.lastName">
         </div><br>
         <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Role</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="userToModify.role.id">
+          <label class="input-group-text" for="inputGroupSelect01">Role</label>
+          <select class="form-select" id="inputGroupSelect01" [(ngModel)]="userToModify.role.id">
             <option selected>Choose...</option>
             <option *ngFor="let role of roleList" [value]="role.id">{{role.roleName}}</option>
           </select>
