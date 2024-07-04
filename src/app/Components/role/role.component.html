@@ -1,6 +1,6 @@
 <div class="row justify-content-between m-0 p-3">
   <h5 class="col my-auto p-0">Roles Management</h5>
-  <button type="button" class="btn btn-success col-auto" data-toggle="modal" data-target="#EditAddRole"
+  <button type="button" class="btn btn-success col-auto" data-bs-toggle="modal" data-bs-target="#EditAddRole"
     (click)="openModel()">Create New Role</button>
 </div>
 
@@ -19,10 +19,10 @@
         <td>{{role.roleName}}</td>
         <td>
           <div class="row m-0">
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#EditAddRole"
+            <button type="button" class="btn btn-dark w-auto" data-bs-toggle="modal" data-bs-target="#EditAddRole"
               (click)="openModel(role)">Edit</button>
-            <div class="p-2"></div>
-            <button type="button" class="btn btn-danger" (click)="deleteRole(role.id)">Delete</button>
+            <div class="p-2 w-auto"></div>
+            <button type="button" class="btn btn-danger w-auto" (click)="deleteRole(role.id)">Delete</button>
           </div>
         </td>
       </tr>
@@ -37,8 +37,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Role</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <!-- <span aria-hidden="true">&times;</span> -->
         </button>
       </div>
       <div class="modal-body">
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" *ngIf="creationMode" (click)="createRole()">Create Role</button>
         <button type="button" class="btn btn-primary" *ngIf="!creationMode" (click)="modifyRole()">Modify Role</button>
       </div>
