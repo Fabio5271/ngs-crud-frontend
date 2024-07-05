@@ -1,28 +1,28 @@
 <div class="row justify-content-between m-0 p-3">
   <h5 class="col my-auto p-0">Roles Management</h5>
-  <button type="button" class="btn btn-success col-auto" data-bs-toggle="modal" data-bs-target="#EditAddRole"
+  <button type="button" class="btn btn-outline-success col-auto" data-bs-toggle="modal" data-bs-target="#EditAddRole"
     (click)="openModel()">Create New Role</button>
 </div>
 
-<div class="p-0 mx-3 my-1 bg-light border border-secondary rounded" style="overflow: hidden;">
-  <table class="table mb-0">
-    <thead class="thead-light">
+<div class="p-0 mx-3 my-1 border border-2 border-info-subtle rounded-3" style="overflow: hidden;">
+  <table class="table border-info-subtle mb-0">
+    <thead>
       <tr>
         <th scope="col">Id #</th>
         <th scope="col">Role</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider border-info-subtle">
       <tr *ngFor="let role of roleList">
         <th scope="row">{{role.id}}</th>
         <td>{{role.roleName}}</td>
         <td>
           <div class="row m-0">
-            <button type="button" class="btn btn-dark w-auto" data-bs-toggle="modal" data-bs-target="#EditAddRole"
+            <button type="button" class="btn btn-outline-light w-auto" data-bs-toggle="modal" data-bs-target="#EditAddRole"
               (click)="openModel(role)">Edit</button>
             <div class="p-2 w-auto"></div>
-            <button type="button" class="btn btn-danger w-auto" (click)="deleteRole(role.id)">Delete</button>
+            <button type="button" class="btn btn-outline-danger w-auto" (click)="deleteRole(role.id)">Delete</button>
           </div>
         </td>
       </tr>
