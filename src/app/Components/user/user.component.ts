@@ -14,7 +14,7 @@ export class UserComponent {
   roleList: Role[] = [];
   // Get data from model
   userToModify: User = new User();
-  // Determines wither we are updating or creating a new user
+  // Determines whether we are updating or creating a new user
   creationMode: boolean = true;
 
   constructor(private userService: UserService,
@@ -67,6 +67,7 @@ export class UserComponent {
   // Verify the event
   openModel(user : User = new User()){
     if (user.id == ""){
+      this.creationMode = true;
       this.userToModify = new User();
     } else {
       this.creationMode = false;

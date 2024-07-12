@@ -11,7 +11,7 @@ export class RoleComponent {
   roleList: Role[] = [];
   // Get data from model
   newRole: Role = new Role();
-  // Determines wither we are updating or creating a new role
+  // Determines whether we are updating or creating a new role
   creationMode: boolean = true;
   
   constructor(private roleService: RoleService){
@@ -52,6 +52,7 @@ export class RoleComponent {
   // Verify the event
   openModel(role: Role = new Role()){
     if(role.id == ""){
+      this.creationMode = true;
       this.newRole = new Role();
     } else {
       this.creationMode = false;
