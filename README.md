@@ -1,8 +1,7 @@
 # ngs-crud-frontend
-Front-end of my user/role management application, built with Angular 18 and Bootstrap 5</br>
-</br>
+Front-end of my user/role management application, built with Angular 18 and Bootstrap 5
 
-# How to run the application
+## How to run the application
 - Install Node.js</br>
 - Install the Angular CLI using the npm package manager on a terminal:</br>
   <code>npm install -g @angular/cli</code></br>
